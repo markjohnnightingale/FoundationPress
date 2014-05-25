@@ -1,63 +1,30 @@
 /*
-Theme Name:         APE-EES
-Description:        Custom theme for the APE-EES Website (by Mark Nightingale)
+Theme Name:         FoundationPress
+Theme URI:          https://github.com/olefredrik/foundationpress.git
+Description:        FoundationPress is a WordPress starter theme based on Foundation 5 by Zurb
 Version:            1.0.0
-Author:             Mark Nightingale
-Author URI:         http://marknightingale.net
+Author:             Ole Fredrik Lie
+Author URI:         http://olefredrik.com/
 
 License:            MIT License
 License URI:        http://www.opensource.org/licenses/mit-license.php
 */
 
 /* ---------------------------------------------------------------------------- 
-  colors : 
-Main orange : CD441C
-Main Blue: 1F619F
-Dark Orange: B03B1A
-Dark Blue: 143B5D
+  
+  Unfortunately WordPress will require a style.css file
+  located in the theme's root folder for stuff to work.
+
+  However, we will not be using vanilla CSS. We're using Sass.
+
+  Sass is a superset of CSS that adds in amazing features
+  such as variables, nested selectors and loops. It's also
+  the easiest way to customize Foundation.
+
+  All Sass files are located in the /scss folder.
+
+  Please read the README.md file before getting started. More info on how
+  to use Sass with Foundation can be found here:
+  http://foundation.zurb.com/docs/sass.html
 
 ---------------------------------------------------------------------------- */
-
-/* ------------------------------------------------------------------------ */
-/* ---------------------------- 1. Overall Styles ------------------------- */
-/* ------------------------------------------------------------------------ */
-html {font-family: "Lato"; font-size: 12pt; line-height: 1.6em; color: #353535;}
-li {font-family: "Lato";}
-p {font-size: 0.8em;}
-h1, h2, h3, h4, h5, h6 {font-family: "Amaranth";}
-h1 {font-size: 2em; margin: 1.3em auto; color: #CD441C;}
-
-/* ---------------------------- 1.1 Helper Styles ------------------------- */
-.row.full-width {max-width: 100%;}
-.no-padding {padding:0px;}
-.clr {clear:both;}
-/* ---------------------------- 1.2 Block Styles ------------------------- */
-.blue-block {background-color: #1F619F;}
-.blue-block a {color: white; text-decoration: underline;}
-.blue-block a.button {background-color: #143B5D; color: white; font-family: "Amaranth"; text-decoration: none;}
-.blue-block a.button:hover {background-color: #1A5282; color: white; text-decoration: underline;}
-.blue-block a.button.secondary {background-color: #3D7AAE; font-family: "Lato", sans-serif;}
-.blue-block a.button.secondary:hover {background-color: #4892D3;}
-
-
-
-/* ------------------------------------------------------------------------ */
-/* ---------------------------- 2. Header  Styles ------------------------- */
-/* ------------------------------------------------------------------------ */
-.logo-holder {}
-.header-logo {margin: 2em 2em 1em 2em;}
-.header-background {position: absolute; height: 25em; background: white; margin-left: 0;}
-.site-title {font-family: "Amaranth"; font-size: 1.2em; color: #1F619F !important; text-decoration: none !important;}
-
-/* ---------------------------- 2.1 Header Menu  Styles ------------------------- */
-#menu-top-nav {font-size: 0.7em;}
-#menu-top-nav li {float: right; list-style: none; margin: 0 0 0 1.5em;}
-
-#language-selector {margin-top: 5em;}
-#language-selector ul {margin-bottom: 0em;}
-
-#language-selector li {float: right !important; margin-left:0.3rem;}
-#language-selector li a.button {padding-left: 0.7rem; padding-right: 0.7rem; margin-bottom: 0.2rem;}
-
-#searchform div {padding-left: 0.2rem;}
-#searchform input {font-family: "Lato"; font-style: italic; border: 2px #3D7AAE solid;} 
