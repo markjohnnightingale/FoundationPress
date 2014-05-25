@@ -23,6 +23,8 @@
     
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/normalize.css" />
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/foundation.css" />
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/fonts/fonts.css" />
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" />
 	
     
     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/img/icons/favicon.ico" type="image/x-icon">
@@ -56,21 +58,54 @@
     <?php foundationPress_mobile_off_canvas(); ?>
   </aside>
   
-        <div class="top-bar-container contain-to-grid show-for-medium-up">
-            <nav class="top-bar" data-topbar="">
-                <ul class="title-area">
-                    <li class="name">
-                        <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
-                    </li>          
-                </ul>
-                <section class="top-bar-section">
-                    <?php foundationPress_top_bar_l(); ?>
-                    <?php foundationPress_top_bar_r(); ?>
-                </section>
-            </nav>
-        </div>
+        <!-- Start header and logo stuff -->
 
-
+			<div class="small-12 columns blue-block no-padding">
+				<div class="small-12 medium-5 columns header-background">
+					&nbsp;
+				</div>
+				<div class="row">
+					<div class="small-12">
+						<div class="row">
+							<div class="small-12 medium-4 columns small-text-center">
+								<div>
+									<a href="<?php bloginfo( 'url' ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/ape-logo-home.png" class="header-logo" alt="<?php _e('Logo of the Parents Association of the European School','apeees');?>"></a>
+								</div>
+								<div>
+									<a href="<?php bloginfo( 'url' ); ?>" class="site-title"><?php _e('Parents Association of <br>the European School', 'apeees');?></a>
+								</div>
+							</div>
+							<div class="small-12 medium-8 columns text-right">
+								<div class="top-nav text-right">
+									<?php foundationPress_top_nav(); ?>
+								</div>
+								<div class="clr" id="language-selector">
+									<?php if (function_exists('qts_language_menu') ) qts_language_menu('text'); ?>
+  								  	<script>$(document).ready(function(){ 
+										$('#qts-lang-menu a[hreflang="en"]').html('EN');
+									 	$('#qts-lang-menu a[hreflang="fr"]').html('FR'); 
+										$('#qts-lang-menu a[hreflang="de"]').html('DE');
+										$('.qts-lang-menu').addClass('inline-list right');
+										$('.qts-lang-menu li a').addClass('button tiny secondary');
+									})</script>
+								</div>
+								<div id="buttons-and-search" class="clr row collapse has-form">
+									<div class="small-12 medium-6 medium-offset-2 text-right columns">
+										<a href="" class="button tiny secondary"><?php _e('Contact','apeees'); ?></a>
+										<a href="" class="button tiny secondary"><?php _e('Newsletter','apeees'); ?></a>
+									</div>
+									<form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
+									<div class="small-12 medium-4 columns no-padding"><input type="text" placeholder="<?php _e('Your search','apeees'); ?>" name="s" id="s" class="expand"/></div>									</div>
+									</form>
+								</div>
+								<nav class="main-nav">
+									<?php foundationPress_main_nav();?>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 <section class="container" role="document">
   <?php do_action('foundationPress_after_header'); ?>

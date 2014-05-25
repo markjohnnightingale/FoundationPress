@@ -5,8 +5,9 @@
  * http://codex.wordpress.org/Function_Reference/register_nav_menus#Examples
  */
 register_nav_menus(array(
-    'top-bar-l' => 'Left Top Bar', // registers the menu in the WordPress admin menu editor
-    'top-bar-r' => 'Right Top Bar',
+    'main-nav-bar' => 'Main Navigation Bar', // registers the menu in the WordPress admin menu editor
+    'top-nav' => 'Secondary Navigation (top of page)',
+	'footer-nav' => 'Small links in the footer',
     'mobile-off-canvas' => 'Mobile'
 ));
 
@@ -15,13 +16,13 @@ register_nav_menus(array(
  * Left top bar
  * http://codex.wordpress.org/Function_Reference/wp_nav_menu
  */
-function foundationPress_top_bar_l() {
+function foundationPress_main_nav() {
     wp_nav_menu(array( 
-        'container' => false,                           // remove nav container
+        'container' => true,                           	// keep nav container
         'container_class' => '',                        // class of container
         'menu' => '',                                   // menu name
-        'menu_class' => 'top-bar-menu left',            // adding custom nav class
-        'theme_location' => 'top-bar-l',                // where it's located in the theme
+        'menu_class' => 'main-menu',            		// adding custom nav class
+        'theme_location' => 'main-nav-bar',             // where it's located in the theme
         'before' => '',                                 // before each link <a> 
         'after' => '',                                  // after each link </a>
         'link_before' => '',                            // before each link text
@@ -35,13 +36,31 @@ function foundationPress_top_bar_l() {
 /**
  * Right top bar
  */
-function foundationPress_top_bar_r() {
+function foundationPress_top_nav() {
     wp_nav_menu(array( 
         'container' => false,                           // remove nav container
         'container_class' => '',                        // class of container
         'menu' => '',                                   // menu name
-        'menu_class' => 'top-bar-menu right',           // adding custom nav class
-        'theme_location' => 'top-bar-r',                // where it's located in the theme
+        'menu_class' => 'top-nav',           			// adding custom nav class
+        'theme_location' => 'top-nav',        	        // where it's located in the theme
+        'before' => '',                                 // before each link <a> 
+        'after' => '',                                  // after each link </a>
+        'link_before' => '',                            // before each link text
+        'link_after' => '',                             // after each link text
+        'depth' => 5,                                   // limit the depth of the nav
+        'fallback_cb' => false,                         // fallback function (see below)
+    ));
+}
+/**
+ * Footer
+ */
+function foundationPress_footer_nav() {
+    wp_nav_menu(array( 
+        'container' => false,                           // remove nav container
+        'container_class' => '',                        // class of container
+        'menu' => '',                                   // menu name
+        'menu_class' => 'footer-nav',           		// adding custom nav class
+        'theme_location' => 'footer-nav',               // where it's located in the theme
         'before' => '',                                 // before each link <a> 
         'after' => '',                                  // after each link </a>
         'link_before' => '',                            // before each link text
@@ -71,5 +90,6 @@ function foundationPress_mobile_off_canvas() {
         'walker' => new top_bar_walker()
     ));
 }
+
 
 ?>
